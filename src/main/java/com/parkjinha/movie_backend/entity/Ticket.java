@@ -8,28 +8,28 @@ import java.util.List;
 
 @Getter
 @Setter
-@Table(name = "tickets")
+@Table(name = "Ticket")
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tickets {
+public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "TicketId")
+    private Integer ticketId;
 
-    @JoinColumn(name = "seat_id")
+    @JoinColumn(name = "SeatId")
     @OneToOne
-    private Seats seatId;
+    private Seat seatId;
 
-    @JoinColumn(name = "schedule_id")
+    @JoinColumn(name = "ScheduleId")
     @OneToMany
-    private List<RunSchedules> scheduleId;
+    private List<RunSchedule> scheduleId;
 
-    @Column(name = "reservation_id")
+    @Column(name = "ReservationId")
     private Integer reservationId;
 
-    @Column(name = "reservation_time")
+    @Column(name = "ReservationTime")
     private String reservationTime;
 }

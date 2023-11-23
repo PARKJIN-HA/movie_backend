@@ -8,31 +8,31 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Users")
+@Table(name = "User")
 @Data
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "UserId")
+    private Integer UserId;
 
-    @Column(columnDefinition = "TEXT",name = "username")
+    @Column(columnDefinition = "TEXT",name = "UserName")
     private String username;
 
-    @Column(columnDefinition = "TEXT",name = "password")
+    @Column(columnDefinition = "TEXT",name = "Password")
     private String password;
 
-    @Column(columnDefinition = "TEXT",name = "email")
+    @Column(columnDefinition = "TEXT",name = "Email")
     private String email;
 
-    public Users(Integer id, String username, String password, String email) {
-        this.id = id;
+    public User(Integer UserId, String username, String password, String email) {
+        this.UserId = UserId;
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public Users() {
+    public User() {
 
     }
 }

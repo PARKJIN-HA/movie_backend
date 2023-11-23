@@ -1,10 +1,8 @@
 package com.parkjinha.movie_backend.service;
 
-import com.parkjinha.movie_backend.entity.Movies;
+import com.parkjinha.movie_backend.entity.Movie;
 import com.parkjinha.movie_backend.repository.MovieRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +15,8 @@ public class MovieService {
         this.movieRepository = movieRepository;
     }
 
-    public void saveDataToDB(Movies movies) throws Exception {
-        movieRepository.save(movies);
+    public void saveDataToDB(Movie movie) throws Exception {
+        movieRepository.save(movie);
     }
+
 }

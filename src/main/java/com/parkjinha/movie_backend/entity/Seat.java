@@ -9,27 +9,28 @@ import java.util.List;
 
 @Getter
 @Setter
-@Table(name = "seats")
+
+@Table(name = "Seat")
 @Entity
 @Data
-public class Seats {
+public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
-    @Column(name= "rowNum")
+    @Column(name = "SeatID")
+    private Integer seatId;
+    @Column(name= "RowNum")
     private Integer rowNum;
 
-    @Column(name= "columnNum")
+    @Column(name= "ColumnNum")
     private Integer columnNum;
 
-    @Column(name="price")
+    @Column(name="Price")
     private Integer price;
 
-    @JoinColumn(name="theater_id")
+    @JoinColumn(name="TheaterId")
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Theaters> theater_id;
+    private List<Theater> theaterId;
 
-    @Column(name="reservation_check")
-    private Integer reservation_check;
+    @Column(name="ReservationCheck")
+    private Integer reservationCheck;
 }
